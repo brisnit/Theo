@@ -1,0 +1,7 @@
+node_modules
+dist
+.DS_Store
+*.log
+.env*
+# Legacy Jessie screenshot, not used by the app
+public/JESSIE*.png
