@@ -5,3 +5,4 @@ dist
 .env*
 # Legacy Jessie screenshot, not used by the app
 public/JESSIE*.png
+public/THEO*.png
