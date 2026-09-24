@@ -23,7 +23,7 @@ export function ProfessorDashboard() {
   const attention = professorAttention(DEMO_PROFESSOR, 5);
   const allInterventions = [...addedInterventions, ...professorInterventions(DEMO_PROFESSOR)];
   const impact = impactSummary(allInterventions);
-  const eng = courseStats('st501');
+  const eng = courseStats('st505');
   const showcase = allInterventions.find((i) => i.id === 'iv-ethan-thesis')!;
 
   const upcoming = courses
@@ -50,7 +50,7 @@ export function ProfessorDashboard() {
           )}
         >
           <p className="insight-text">
-            Your courses are academically healthy overall, but ST 501 engagement has declined {-eng.engagementChange}% in two weeks.{' '}
+            Your courses are academically healthy overall, but ST505 engagement has declined {-eng.engagementChange}% in two weeks.{' '}
             {high} students are at high risk across your courses, and {impact.rate}% of your measured interventions this term improved a student's trajectory.
           </p>
         </InsightCard>
@@ -133,7 +133,7 @@ export function ProfessorDashboard() {
             <div><b>{impact.measuring}</b><span>measuring now</span></div>
           </div>
           <div className="impact-story">
-            <div className="muted small">{fmtDate(showcase.steps[0].date)} – {fmtDate(showcase.steps.at(-1)!.date)} · ST 501</div>
+            <div className="muted small">{fmtDate(showcase.steps[0].date)} – {fmtDate(showcase.steps.at(-1)!.date)} · ST505</div>
             <div><b>Ethan Brooks</b> · Theological Argument {showcase.masteryFrom}% → {showcase.masteryTo}%</div>
             <div className="impact-risk"><RiskBadge risk="high" label="High" /> <ArrowRight size={14} /> <RiskBadge risk="moderate" label="Moderate" /></div>
           </div>

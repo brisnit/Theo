@@ -123,7 +123,7 @@ interface CourseDef {
 
 const COURSE_DEFS: CourseDef[] = [
   {
-    id: 'st501', code: 'ST 501', title: 'Systematic Theology I: Theological Method', professorId: 'whitfield', schedule: 'MW · 9:00 AM',
+    id: 'st505', code: 'ST505', title: 'Trinity, Revelation, and Salvation', professorId: 'whitfield', schedule: 'MW · 9:00 AM',
     color: C.blue, concepts: ['Theological Sources', 'Theological Argument', 'Doctrine of God', 'Scripture & Revelation'],
     focus: 'Theological Argument', secondary: 'Doctrine of God', roster: range(0, 27), base: 84,
     engCurve: [88, 90, 91, 92, 93, 94, 93, 91], mix: { high: 3, watch: 6, rising: 4 }, focusShare: 4,
@@ -140,7 +140,7 @@ const COURSE_DEFS: CourseDef[] = [
     ],
   },
   {
-    id: 'ld500', code: 'LD 500', title: 'Foundations of Christian Leadership', professorId: 'whitfield', schedule: 'TR · 1:30 PM',
+    id: 'ld500', code: 'LD500', title: 'Leadership in an Ever-Changing World', professorId: 'whitfield', schedule: 'TR · 1:30 PM',
     color: C.navy, concepts: ['Leadership Theology', 'Team Dynamics', 'Congregational Change', 'Ministry Ethics'],
     focus: 'Congregational Change', secondary: 'Team Dynamics', roster: range(20, 43), base: 88,
     engCurve: [80, 82, 83, 84, 85, 85, 87, 88], mix: { high: 1, watch: 3, rising: 6 }, focusShare: 2,
@@ -157,7 +157,7 @@ const COURSE_DEFS: CourseDef[] = [
     ],
   },
   {
-    id: 'ps521', code: 'PS 521', title: 'Human Development Across the Lifespan', professorId: 'whitfield', schedule: 'MW · 11:00 AM',
+    id: 'pf501', code: 'PF501', title: 'Foundations of Psychological Sciences: On Being Human', professorId: 'whitfield', schedule: 'MW · 11:00 AM',
     color: C.peri, concepts: ['Developmental Theories', 'Research Methods', 'Faith Development', 'Family Systems'],
     focus: 'Research Methods', secondary: 'Faith Development', roster: [0, ...range(14, 44)], base: 84,
     engCurve: [86, 87, 86, 86, 85, 86, 84, 82], mix: { high: 2, watch: 5, rising: 5 }, focusShare: 3,
@@ -174,7 +174,7 @@ const COURSE_DEFS: CourseDef[] = [
     ],
   },
   {
-    id: 'nt501', code: 'NT 501', title: 'New Testament Introduction & Exegesis', professorId: 'whitfield', schedule: 'TR · 9:30 AM',
+    id: 'nt500', code: 'NT500', title: 'New Testament Introduction', professorId: 'whitfield', schedule: 'TR · 9:30 AM',
     color: C.slate, concepts: ['Historical Context', 'Literary Genre', 'Exegetical Method', 'Application'],
     focus: 'Exegetical Method', secondary: 'Historical Context', roster: range(3, 24), base: 89,
     engCurve: [84, 86, 87, 88, 89, 89, 91, 92], mix: { high: 1, watch: 2, rising: 5 }, focusShare: 2,
@@ -191,7 +191,7 @@ const COURSE_DEFS: CourseDef[] = [
     ],
   },
   {
-    id: 'mi500', code: 'MI 500', title: 'Foundations of Christian Mission', professorId: 'hale', schedule: 'TR · 11:00 AM',
+    id: 'sf503', code: 'SF503', title: 'Living Missiologically', professorId: 'hale', schedule: 'TR · 11:00 AM',
     color: C.navy, concepts: ['Theology of Mission', 'Cultural Analysis', 'Contextualization', 'World Christianity'],
     focus: 'Cultural Analysis', secondary: 'World Christianity', roster: [0, ...range(28, 44), ...range(5, 12)], base: 85,
     engCurve: [84, 85, 85, 86, 87, 86, 88, 88], mix: { high: 1, watch: 3, rising: 5 }, focusShare: 2,
@@ -208,7 +208,7 @@ const COURSE_DEFS: CourseDef[] = [
     ],
   },
   {
-    id: 'ot501', code: 'OT 501', title: 'Introduction to the Old Testament', professorId: 'price', schedule: 'MWF · 10:00 AM',
+    id: 'ot500', code: 'OT500', title: 'Old Testament Introduction', professorId: 'price', schedule: 'MWF · 10:00 AM',
     color: C.slate, concepts: ['Pentateuch', 'Historical Books', 'Wisdom Literature', 'Prophets'],
     focus: 'Prophets', secondary: 'Wisdom Literature', roster: [0, ...range(15, 43)], base: 87,
     engCurve: [85, 86, 86, 87, 87, 88, 88, 89], mix: { high: 1, watch: 3, rising: 4 }, focusShare: 2,
@@ -246,7 +246,7 @@ interface Spec {
 const onTime: SubStatus[] = ['on-time', 'on-time', 'on-time', 'on-time', 'on-time', 'on-time'];
 
 const SPECS: Record<string, Record<string, Spec>> = {
-  st501: {
+  st505: {
     'maya-johnson': {
       archetype: 'high', current: 81, predicted: 68, engDrop: 0.37, momentum: -8, weak: 'Theological Argument',
       grades: [86, 88, 87, 85, 86, 84, 83, 81],
@@ -265,13 +265,13 @@ const SPECS: Record<string, Record<string, Spec>> = {
       masteryPrev: { 'Theological Argument': 70 },
     },
   },
-  ps521: {
+  pf501: {
     'maya-johnson': {
       archetype: 'steady', current: 84, predicted: 86, momentum: 5, engDrop: -0.03, pattern: onTime, lastActive: 'Today',
       mastery: { 'Developmental Theories': 82, 'Research Methods': 72, 'Faith Development': 80, 'Family Systems': 78 },
     },
   },
-  mi500: {
+  sf503: {
     'maya-johnson': {
       archetype: 'rising', current: 88, predicted: 91, momentum: 12, pattern: onTime, lastActive: 'Today',
       grades: [80, 81, 83, 84, 85, 86, 87, 88],
@@ -279,7 +279,7 @@ const SPECS: Record<string, Record<string, Spec>> = {
       masteryPrev: { 'Contextualization': 79, 'Cultural Analysis': 74 },
     },
   },
-  ot501: {
+  ot500: {
     'maya-johnson': {
       archetype: 'steady', current: 90, predicted: 92, momentum: 7, pattern: onTime, lastActive: 'Yesterday',
       mastery: { Pentateuch: 84, 'Historical Books': 80, 'Wisdom Literature': 76, Prophets: 72 },
@@ -446,7 +446,7 @@ function firstName(e: Enrollment) {
 
 export const interventions: Intervention[] = [
   {
-    id: 'iv-ethan-thesis', enrollmentId: 'st501:ethan-brooks', title: 'Theological Argument review', concept: 'Theological Argument',
+    id: 'iv-ethan-thesis', enrollmentId: 'st505:ethan-brooks', title: 'Theological Argument review', concept: 'Theological Argument',
     status: 'improved', masteryFrom: 58, masteryTo: 72, riskFrom: 'high', riskTo: 'moderate',
     steps: [
       { date: '2026-09-04', kind: 'action', text: 'You sent a Theological Argument review' },
@@ -455,7 +455,7 @@ export const interventions: Intervention[] = [
     ],
   },
   {
-    id: 'iv-maya-research', enrollmentId: 'st501:maya-johnson', title: 'Theological Sources review', concept: 'Theological Sources',
+    id: 'iv-maya-research', enrollmentId: 'st505:maya-johnson', title: 'Theological Sources review', concept: 'Theological Sources',
     status: 'improved', masteryFrom: 71, masteryTo: 89, riskFrom: 'moderate', riskTo: 'low',
     steps: [
       { date: '2026-09-04', kind: 'action', text: 'You sent a Theological Sources review' },
@@ -466,10 +466,10 @@ export const interventions: Intervention[] = [
 ];
 
 const generated: [courseId: string, dates: [string, string, string]][] = [
-  ['st501', ['2026-09-21', '2026-09-22', '2026-09-26']],
+  ['st505', ['2026-09-21', '2026-09-22', '2026-09-26']],
   ['ld500', ['2026-09-18', '2026-09-19', '2026-09-24']],
-  ['ps521', ['2026-09-23', '2026-09-24', '2026-09-29']],
-  ['nt501', ['2026-09-16', '2026-09-17', '2026-09-22']],
+  ['pf501', ['2026-09-23', '2026-09-24', '2026-09-29']],
+  ['nt500', ['2026-09-16', '2026-09-17', '2026-09-22']],
 ];
 
 for (const [courseId, [d1, d2, d3]] of generated) {
@@ -511,7 +511,7 @@ for (const [courseId, [d1, d2, d3]] of generated) {
     });
   }
 
-  if (courseId === 'st501' || courseId === 'ps521') {
+  if (courseId === 'st505' || courseId === 'pf501') {
     const stalled = pickEnrollment(courseId, 'high', 0, reserved);
     interventions.push({
       id: `iv-${stalled.id}`, enrollmentId: stalled.id, title: 'Check-in message', status: 'no-change', riskFrom: 'high', riskTo: 'high',
@@ -528,7 +528,7 @@ for (const [courseId, [d1, d2, d3]] of generated) {
 
 export const seedThreads: Thread[] = [
   {
-    id: 'whitfield:maya-johnson', professorId: 'whitfield', studentId: 'maya-johnson', courseId: 'st501', unread: { professor: 0, student: 0 },
+    id: 'whitfield:maya-johnson', professorId: 'whitfield', studentId: 'maya-johnson', courseId: 'st505', unread: { professor: 0, student: 0 },
     messages: [
       { id: 'm1', from: 'student', time: '2026-10-02T10:14', text: 'Hi Dr. Whitfield — is it okay if my annotated bibliography uses two sources from the same theological journal?' },
       { id: 'm2', from: 'professor', time: '2026-10-02T11:02', text: "Yes, that's fine as long as they make different arguments. Your engagement with primary sources has been strong this term." },
@@ -536,27 +536,27 @@ export const seedThreads: Thread[] = [
     ],
   },
   {
-    id: 'whitfield:priya-nair', professorId: 'whitfield', studentId: 'priya-nair', courseId: 'ps521', unread: { professor: 1, student: 0 },
+    id: 'whitfield:priya-nair', professorId: 'whitfield', studentId: 'priya-nair', courseId: 'pf501', unread: { professor: 1, student: 0 },
     messages: [
       { id: 'm1', from: 'student', time: '2026-10-13T09:12', text: 'Could we meet during office hours Thursday to go over the research methods lab?' },
     ],
   },
   {
-    id: 'whitfield:hannah-kim', professorId: 'whitfield', studentId: 'hannah-kim', courseId: 'st501', unread: { professor: 1, student: 0 },
+    id: 'whitfield:hannah-kim', professorId: 'whitfield', studentId: 'hannah-kim', courseId: 'st505', unread: { professor: 1, student: 0 },
     messages: [
       { id: 'm1', from: 'professor', time: '2026-10-09T15:40', text: 'Hi Hannah — I noticed the primary sources worksheet is still open in Canvas. Everything okay?' },
       { id: 'm2', from: 'student', time: '2026-10-12T16:45', text: 'Thank you for checking in. I had a rough week but I submitted it this morning.' },
     ],
   },
   {
-    id: 'whitfield:jordan-lee', professorId: 'whitfield', studentId: 'jordan-lee', courseId: 'st501', unread: { professor: 0, student: 0 },
+    id: 'whitfield:jordan-lee', professorId: 'whitfield', studentId: 'jordan-lee', courseId: 'st505', unread: { professor: 0, student: 0 },
     messages: [
       { id: 'm1', from: 'student', time: '2026-10-08T19:40', text: "I read your comments on the argument workshop. I'm not sure how to make my doctrinal thesis more specific without making it too narrow." },
       { id: 'm2', from: 'professor', time: '2026-10-09T08:15', text: "Good question. Try naming the claim, the scriptural and theological grounds, and why it matters for the church — all in one sentence. Bring a draft to office hours Thursday and we'll work on it together." },
     ],
   },
   {
-    id: 'whitfield:ethan-brooks', professorId: 'whitfield', studentId: 'ethan-brooks', courseId: 'st501', unread: { professor: 0, student: 0 },
+    id: 'whitfield:ethan-brooks', professorId: 'whitfield', studentId: 'ethan-brooks', courseId: 'st505', unread: { professor: 0, student: 0 },
     messages: [
       { id: 'm1', from: 'professor', time: '2026-09-04T15:30', text: "Hi Ethan — I've added a short Theological Argument review to your Canvas modules. It should take about 15 minutes." },
       { id: 'm2', from: 'student', time: '2026-09-06T21:10', text: 'Finished it. The examples of descriptive vs. constructive theological claims really helped.' },
@@ -564,14 +564,14 @@ export const seedThreads: Thread[] = [
     ],
   },
   {
-    id: 'hale:maya-johnson', professorId: 'hale', studentId: 'maya-johnson', courseId: 'mi500', unread: { professor: 0, student: 0 },
+    id: 'hale:maya-johnson', professorId: 'hale', studentId: 'maya-johnson', courseId: 'sf503', unread: { professor: 0, student: 0 },
     messages: [
       { id: 'm1', from: 'professor', time: '2026-10-09T13:20', text: 'Maya, great job on the community ethnography — your observations of local congregations were some of the strongest in the class.' },
       { id: 'm2', from: 'student', time: '2026-10-09T14:02', text: 'Thank you, Professor Hale! I really enjoyed that one.' },
     ],
   },
   {
-    id: 'price:maya-johnson', professorId: 'price', studentId: 'maya-johnson', courseId: 'ot501', unread: { professor: 0, student: 1 },
+    id: 'price:maya-johnson', professorId: 'price', studentId: 'maya-johnson', courseId: 'ot500', unread: { professor: 0, student: 1 },
     messages: [
       { id: 'm1', from: 'professor', time: '2026-10-12T08:30', text: 'Reminder: the Psalms reading reflection is due next Monday. Choose one lament psalm and trace how it moves toward trust.' },
     ],

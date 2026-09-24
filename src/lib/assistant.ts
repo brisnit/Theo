@@ -54,11 +54,11 @@ function findStudentEnrollment(q: string, ctx: AssistantContext): Enrollment | u
 
 function findCourse(q: string, courseIds: string[]) {
   return courseIds.map((id) => getCourse(id)!).find((c) => {
-    const [dept, num] = c.code.toLowerCase().split(' ');
+    const [, dept, num] = c.code.toLowerCase().match(/^([a-z]+)\s*(\d+)/)!;
     return q.includes(num) || q.includes(c.title.toLowerCase()) || new RegExp(`\\b${dept}\\b`).test(q)
       || (dept === 'st' && /systematic|theology|doctrin|writing/.test(q))
-      || (dept === 'ps' && /psych|development/.test(q)) || (dept === 'nt' && /new testament|greek|exegesis/.test(q))
-      || (dept === 'ot' && /old testament|hebrew/.test(q)) || (dept === 'mi' && /mission|intercultural/.test(q))
+      || (dept === 'pf' && /psych|development|being human/.test(q)) || (dept === 'nt' && /new testament|greek|exegesis/.test(q))
+      || (dept === 'ot' && /old testament|hebrew/.test(q)) || (dept === 'sf' && /mission|missiolog|intercultural/.test(q))
       || (dept === 'ld' && /leadership|ministry/.test(q));
   });
 }
@@ -113,7 +113,7 @@ function professorAnswer(q: string, ctx: AssistantContext): Answer {
         }),
         `${impact.measuring} interventions are being measured; ${impact.improved} earlier ones improved outcomes`,
       ],
-      footer: 'The largest shift is ST 501 engagement — mostly concentrated in students struggling with Theological Argument.',
+      footer: 'The largest shift is ST505 engagement — mostly concentrated in students struggling with Theological Argument.',
     };
   }
 
@@ -158,7 +158,7 @@ function professorAnswer(q: string, ctx: AssistantContext): Answer {
 
   return {
     text: 'I can explain what Theo sees in your Canvas data. Try asking:',
-    bullets: ['“Who needs my attention today?”', '“Why is Maya at risk?”', '“How is PS 521 doing?”', '“Are my interventions working?”'],
+    bullets: ['“Who needs my attention today?”', '“Why is Maya at risk?”', '“How is PF501 doing?”', '“Are my interventions working?”'],
   };
 }
 
@@ -182,7 +182,7 @@ function studentAnswer(q: string): Answer {
     };
   }
 
-  if (/why|theology|systematic|st 501|trending|down|drop|writing/.test(q) && focus) {
+  if (/why|theology|systematic|trinity|st505|trending|down|drop|writing/.test(q) && focus) {
     const late = focus.submissions.filter((s) => s.status === 'late').length;
     const w = weakest(focus);
     return {

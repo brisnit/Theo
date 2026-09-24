@@ -7,7 +7,7 @@ import { C } from '../data/palette';
 import { Link } from '../lib/router';
 
 export function Home() {
-  const eng = courseStats('st501');
+  const eng = courseStats('st505');
   const maya = studentSummary(DEMO_STUDENT);
   return (
     <div className="home">
